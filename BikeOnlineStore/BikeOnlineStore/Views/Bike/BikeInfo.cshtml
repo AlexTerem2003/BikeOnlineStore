@@ -1,0 +1,92 @@
+﻿@model Bike
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_SearchLayout";
+}
+
+
+<table style="width:60%; margin:auto" class="table table-bordered table-striped">
+    <tr>
+        <td style="width:440px; text-align:center; border-right:0px">
+            <img src="@Model.CoverImagePath" style="width:400px" />
+        </td>
+        <td style="padding:20px; border-left:0px; border-right:0px">
+            <br>
+            <h3>@Model.Title</h3>
+            <h4 style="margin-bottom:15px">@Model.Type</h4>
+            <table>
+                <tr>
+                    <td>
+                        <h3 style="margin-right:40px">@Model.Price ₽</h3>
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="padding-left:20px; border-left:0px">
+            <h5><button style="border: 1px solid gray; border-radius:10px;
+                               background-color:#325d88; color:white;
+                               margin-top:40px; padding-left:20px; padding-right:20px; padding-top:8px; padding-bottom:8px">
+                    <i style="margin-right:5px; font-size:20px; vertical-align:middle" class="bi bi-cart3"></i> добавить в корзину
+                </button>
+            </h5>
+        </td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("3"))
+            {
+                <a asp-controller="Bike" asp-action="Edit" asp-route-Id="@Model.Id" style="margin-left:10px; margin-right:10px" class="btn btn-primary">
+                    <i style="font-size:15px; vertical-align:middle" class="bi bi-card-list"></i>
+                </a>
+                <a asp-controller="Bike" asp-action="Delete" asp-route-Id="@Model.Id" class="btn btn-primary">
+                    <i style="font-size:15px; vertical-align:middle" class="bi bi-trash"></i>
+                </a>
+            }
+        }
+    </tr>
+</table>
+
+<br>
+<h3 align="center">Характеристики</h3>
+<br>
+
+<table style="width:30%; margin:auto" class="table table-bordered table-striped">
+    <tr>
+        <td style="width:40%; padding:20px">
+            <h5>Модель</h5>
+            <hr>
+            <h5>Тип</h5>
+            <hr>
+            <h5>Диаметр колёс</h5>
+            <hr>
+            <h5>Материал рамы</h5>
+            <hr>
+            <h5>Тормоза</h5>
+            <hr>
+            <h5>Кол-во скоростей</h5>
+            <hr>
+            <h5>Амортизация</h5>
+            <hr>
+            <h5>Вес</h5>
+        </td>
+        <td style="padding:20px">
+            <h5>@Model.Title</h5>
+            <hr>
+            <h5>@Model.Type</h5>
+            <hr>
+            <h5>@Model.WheelDiameter</h5>
+            <hr>
+            <h5>@Model.FrameMaterial</h5>
+            <hr>
+            <h5>@Model.BrakeType</h5>
+            <hr>
+            <h5>@Model.NumberOfSpeeds</h5>
+            <hr>
+            <h5>@Model.Depreciation</h5>
+            <hr>
+            <h5>@Model.Weight</h5>
+        </td>
+    </tr>
+</table>

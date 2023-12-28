@@ -1,0 +1,54 @@
+﻿@model ShoppingCartPlusBikeForShoppingCart
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="margin-top:30px; margin-bottom:30px" align="center">Корзина</h2>
+
+@{
+    Boolean isEmpty = bool.Parse(TempData["isBikeListEmpty"].ToString());
+    if (!isEmpty)
+    {
+        <div style="margin:auto">
+            <table style="width:40%; margin:auto"><!--class="table table-bordered table-striped"-->
+                @foreach (var bike in Model.bikeForShoppingCart)
+                {
+                    <tr>
+                        <td style="vertical-align:middle; width:220px" class="bike_table_elements">
+                            <img src="@bike.CoverImagePath" style="width:200px; margin-right:20px" class="img-thumbnail" />
+                        </td>
+                        <td style="vertical-align:middle">
+                            <div style="margin-left:10px">
+                                <h4 style="font-weight:bold; text-decoration:underline">@bike.Title</h4>
+                                <h5>@bike.Price ₽</h5>
+                                <h5>@bike.Quantity шт.</h5>
+                            </div>
+                        </td>
+                        <td style="vertical-align:middle">
+                            <h5 style="text-align:center">@bike.PriceMultiplyQuantity ₽</h5>
+                        </td>
+                        <td style="vertical-align:middle">
+                            <div style="text-align:center">
+                                <a asp-controller="ShoppingCart" asp-action="DeleteWhileInShoppingCart" asp-route-Id="@bike.Id"><i style="font-size:30px" class="bi bi-dash-circle"></i></a>
+                                <br />
+                                <a asp-controller="ShoppingCart" asp-action="AddWhileInShoppingCart" asp-route-Id="@bike.Id"><i style="font-size:30px" class="bi bi-plus-circle"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div style="margin-bottom:100px; margin-top:20px; text-align:center">
+            <a asp-controller="Catalog" asp-action="Index" class="btn btn-primary">Добавить товары</a>
+        </div>
+    }
+    else
+    {
+        <hr style="margin-bottom:20px" />
+        <h3 align="center" style="margin-bottom:20px">Корзина пуста!</h3>
+        <div style="margin-bottom:100px; text-align:center">
+            <a asp-controller="Catalog" asp-action="Index" class="btn btn-primary">Перейти в каталог</a>
+        </div>
+        <br />
+    }
+}

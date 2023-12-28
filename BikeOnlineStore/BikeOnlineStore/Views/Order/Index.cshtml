@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="margin-bottom:20px" align="center">Заказы</h2>
+<div style="margin:auto">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="bike_table_elements" width="12%">
+                    Id
+                </th>
+                <th class="bike_table_elements" width="12%">
+                    Время и дата
+                </th>
+                <th class="bike_table_elements" width="10%">
+                    Статус
+                </th>
+                <th class="bike_table_elements" width="32%">
+                    Адрес доставки
+                </th>
+                <th class="bike_table_elements" width="10%">
+                    Id пользователя
+                </th>
+                <th class="bike_table_elements" width="10%">
+                    Список велосипедов
+                </th>
+                <th class="bike_table_elements" width="12%">
+                    Доп. функции
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td id="Id" class="bike_table_elements">
+                        @obj.Id
+                    </td>
+                    <td id="OrderDateTime" class="bike_table_elements">
+                        @obj.OrderDateTime
+                    </td>
+                    <td id="Status" class="bike_table_elements">
+                        @obj.Status
+                    </td>
+                    <td id="DeliveryAddress" class="bike_table_elements">
+                        @obj.DeliveryAddress
+                    </td>
+                    <td id="UserId" class="bike_table_elements">
+                        @obj.UserId
+                    </td>
+                    <td id="BikeList" class="bike_table_elements">
+                        @obj.BikeList
+                    </td>
+                    <td class="bike_table_elements">
+                        <a asp-controller="Order" asp-action="Edit" asp-route-Id="@obj.Id" style="margin-right:20px" class="btn btn-primary">
+                            <i style="font-size:20px; vertical-align:middle" class="bi bi-card-list"></i>
+                        </a>
+                        <a asp-controller="Order" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-primary">
+                            <i style="font-size:20px; vertical-align:middle" class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

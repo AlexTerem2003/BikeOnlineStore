@@ -1,0 +1,80 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="margin-bottom:20px" align="center">Пользователи</h2>
+<div style="margin:auto">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="bike_table_elements">
+                    Id
+                </th>
+                <th class="bike_table_elements">
+                    Фамилия
+                </th>
+                <th class="bike_table_elements">
+                    Имя
+                </th>
+                <th class="bike_table_elements">
+                    Отчество
+                </th>
+                <th class="bike_table_elements">
+                    Номер телефона
+                </th>
+                <th class="bike_table_elements">
+                    Никнейм
+                </th>
+                <th class="bike_table_elements">
+                    Пароль
+                </th>
+                <th class="bike_table_elements">
+                    Роль
+                </th>
+                <th class="bike_table_elements">
+                    Доп. функции
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td id="Id" class="bike_table_elements" width="6%">
+                        @obj.Id
+                    </td>
+                    <td id="Surname" class="bike_table_elements" width="12%">
+                        @obj.Surname
+                    </td>
+                    <td id="Name" class="bike_table_elements" width="8%">
+                        @obj.Name
+                    </td>
+                    <td id="Patronymic" class="bike_table_elements" width="10%">
+                        @obj.Patronymic
+                    </td>
+                    <td id="PhoneHumber" class="bike_table_elements" width="7%">
+                        @obj.PhoneHumber
+                    </td>
+                    <td id="Username" class="bike_table_elements" width="12%">
+                        @obj.Username
+                    </td>
+                    <td id="Password" class="bike_table_elements" width="12%">
+                        @obj.Password
+                    </td>
+                    <td id="Role" class="bike_table_elements" width="1%">
+                        @obj.Role
+                    </td>
+                    <td class="bike_table_elements" width="11%">
+                        <a asp-controller="User" asp-action="Edit" asp-route-Id="@obj.Id" style="margin-right:20px" class="btn btn-primary">
+                            <i style="font-size:20px; vertical-align:middle" class="bi bi-card-list"></i>
+                        </a>
+                        <a asp-controller="User" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-primary">
+                            <i style="font-size:20px; vertical-align:middle" class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

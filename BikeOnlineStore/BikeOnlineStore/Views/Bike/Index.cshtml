@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Bike>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_SearchLayout";
+}
+
+<h2 style="margin-bottom:20px" align="center">Велосипеды &nbsp; <a asp-controller="Bike" asp-action="Add"><i class="bi bi-plus-circle"></i></a></h2>
+<div style="margin:auto">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="bike_table_elements" width="4%">
+                    Id
+                </th>
+                <th class="bike_table_elements" width="18%">
+                    Название
+                </th>
+                <th class="bike_table_elements" width="10%">
+                    Тип
+                </th>
+                <th class="bike_table_elements" width="5%">
+                    Цена
+                </th>
+                <th class="bike_table_elements" width="8%">
+                    Диаметр колёс
+                </th>
+                <th class="bike_table_elements" width="8%">
+                    Материал рамы
+                </th>
+                <th class="bike_table_elements" width="8%">
+                    Тип тормозов
+                </th>
+                <th class="bike_table_elements" width="8%">
+                    Количество скоростей
+                </th>
+                <th class="bike_table_elements" width="12%">
+                    Амортизация
+                </th>
+                <th class="bike_table_elements" width="2%">
+                    Вес
+                </th>
+                <th class="bike_table_elements" width="6%">
+                    Количество на складе
+                </th>
+                <th class="bike_table_elements" width="11%">
+                    Доп. функции
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td id="Id" class="bike_table_elements">
+                        @obj.Id
+                    </td>
+                    <td id="Title" class="bike_table_elements">
+                        @obj.Title
+                    </td>
+                    <td id="Type" class="bike_table_elements">
+                        @obj.Type
+                    </td>
+                    <td id="Price" class="bike_table_elements">
+                        @obj.Price
+                    </td>
+                    <td id="WheelDiameter" class="bike_table_elements">
+                        @obj.WheelDiameter
+                    </td>
+                    <td id="FrameMaterial" class="bike_table_elements">
+                        @obj.FrameMaterial
+                    </td>
+                    <td id="BrakeType" class="bike_table_elements">
+                        @obj.BrakeType
+                    </td>
+                    <td id="NumberOfSpeeds" class="bike_table_elements">
+                        @obj.NumberOfSpeeds
+                    </td>
+                    <td id="Depreciation" class="bike_table_elements">
+                        @obj.Depreciation
+                    </td>
+                    <td id="Weight" class="bike_table_elements">
+                        @obj.Weight
+                    </td>
+                    <td id="QuantityInStock" class="bike_table_elements">
+                        @obj.QuantityInStock
+                    </td>
+                    <td class="bike_table_elements" width="11%">
+                        <a asp-controller="Bike" asp-action="Edit" asp-route-Id="@obj.Id" style="margin-right:20px" class="btn btn-primary">
+                            <i style="font-size:20px; vertical-align:middle" class="bi bi-card-list"></i>
+                        </a>
+                        <a asp-controller="Bike" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-primary">
+                            <i style="font-size:20px; vertical-align:middle" class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = "~/Views/Shared/_FuncLayout.cshtml";
+}
+
+@model Bike
+<form method="post" enctype="multipart/form-data" asp-action="Edit" style="width:50%; margin:auto">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Изменение данных о велосипеде</h2>
+            <hr />
+        </div>
+        <table style="width:100%">
+            <tr>
+                <td style="width:50%; padding-right:5px">
+                    <img src="@Model.CoverImagePath" style="width:400px; margin-right:20px" class="img-thumbnail" />
+                </td>
+                <td style="padding-left:5px">
+                    <div class="mb-3">
+                        <label>Название</label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Цена</label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Фото</label>
+                        <div class="custom-file">
+                            <input asp-for="CoverPhoto" class="custom-file-input" id="customFile" />
+                        </div>
+                        <span asp-validation-for="CoverPhoto"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr><td><h3></h3></td><td><h3></h3></td></tr>
+            <tr>
+                <td style="width:50%; padding-right:5px">
+                    <div class="mb-3">
+                        <label>Тип</label>
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Диаметр колёс</label>
+                        <input asp-for="WheelDiameter" class="form-control" />
+                        <span asp-validation-for="WheelDiameter"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Материал рамы</label>
+                        <input asp-for="FrameMaterial" class="form-control" />
+                        <span asp-validation-for="FrameMaterial"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Тип тормозной системы</label>
+                        <input asp-for="BrakeType" class="form-control" />
+                        <span asp-validation-for="BrakeType"></span>
+                    </div>
+                </td>
+                <td style="padding-left:5px">
+                    <div class="mb-3">
+                        <label>Количество скоростей</label>
+                        <input asp-for="NumberOfSpeeds" class="form-control" />
+                        <span asp-validation-for="NumberOfSpeeds"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Амортизация</label>
+                        <input asp-for="Depreciation" class="form-control" />
+                        <span asp-validation-for="Depreciation"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Вес</label>
+                        <input asp-for="Weight" class="form-control" />
+                        <span asp-validation-for="Weight"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Количество на складе</label>
+                        <input asp-for="QuantityInStock" class="form-control" />
+                        <span asp-validation-for="QuantityInStock"></span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary" style="width:200px">Применить</button>
+        <a asp-controller="Bike" asp-action="Index" class="btn btn-secondary" style="width:150px">Отмена</a>
+    </div>
+</form>

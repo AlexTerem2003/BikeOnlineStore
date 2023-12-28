@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Bike>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_CatalogLayout";
+}
+
+<h2 style="margin-bottom:20px" align="center">Велосипеды &nbsp;
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("3"))
+        {
+            <a asp-controller="Bike" asp-action="Add"><i class="bi bi-plus-circle"></i></a>
+        }
+    }
+</h2>
+
+<hr><br>
+<div>
+    <div style="width:90%; margin:auto; text-align:center">
+        @foreach (Bike b in Model) {
+            <div style="width: 440px; margin-left: 20px; margin-right: 20px;
+                 text-align: center; display: inline-block; vertical-align: middle;
+                 border: 1px solid #cfcfce; border-radius: 10px;">
+                <table style="margin:auto">
+                    <tr style="height:300px">
+                        <td>
+                            <a asp-controller="Bike" asp-action="BikeInfo" asp-route-Id="@b.Id"><img src="@b.CoverImagePath" style="width:400px" /></a><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="text-align:center">
+                                <h3 style="font-weight:bold">@b.Title</h3>
+                                <h3>@b.Price ₽</h3>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        }
+    </div>
+</div>
