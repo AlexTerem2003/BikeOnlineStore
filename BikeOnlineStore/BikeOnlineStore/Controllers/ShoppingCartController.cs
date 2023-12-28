@@ -80,8 +80,7 @@ namespace BikeOnlineStore.Controllers
         }
 
 
-
-        public ActionResult AddWhileInShoppingCart(int id)
+        public ActionResult AddToShoppingCart(int id)
         {
             string str = "";
             var x = User.Claims.ToList();
@@ -92,14 +91,16 @@ namespace BikeOnlineStore.Controllers
                 break;
             };
 
+            ShoppingCart shoppingCart = _db.ShoppingCarts.FirstOrDefault(s => s.Username == str);
+            List<BikeForShoppingCart> bikes = new List<BikeForShoppingCart>();
+
             var c = _db.ShoppingCarts.FirstOrDefault(u => u.Username == str);
-            c.BikeList += "," + id.ToString();
+            if (shoppingCart.BikeList == "") c.BikeList += id.ToString();
+            else c.BikeList += "," + id.ToString();
             _db.ShoppingCarts.Update(c);
             _db.SaveChanges();
-
             return RedirectToAction("Index");
         }
-
 
 
         public ActionResult DeleteWhileInShoppingCart(int id)

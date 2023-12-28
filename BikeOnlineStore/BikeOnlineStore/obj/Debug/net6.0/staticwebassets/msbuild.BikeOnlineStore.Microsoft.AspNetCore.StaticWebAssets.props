@@ -16,6 +16,54 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\BikeOnlineStore.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\062f1c83-1f31-4b39-ab0d-677a64676117_Cube-Acid-29.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>BikeOnlineStore</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BikeOnlineStore</BasePath>
+      <RelativePath>bikes/cover/062f1c83-1f31-4b39-ab0d-677a64676117_Cube-Acid-29.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\062f1c83-1f31-4b39-ab0d-677a64676117_Cube-Acid-29.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\0c84b847-f5be-4ec2-a411-54977d327992_Pilot-750-24-Z010-blue.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>BikeOnlineStore</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BikeOnlineStore</BasePath>
+      <RelativePath>bikes/cover/0c84b847-f5be-4ec2-a411-54977d327992_Pilot-750-24-Z010-blue.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\0c84b847-f5be-4ec2-a411-54977d327992_Pilot-750-24-Z010-blue.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\136bf5fe-7595-4704-829f-877fc2ec9973_Pilot-750-24-Z010-blue.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>BikeOnlineStore</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BikeOnlineStore</BasePath>
+      <RelativePath>bikes/cover/136bf5fe-7595-4704-829f-877fc2ec9973_Pilot-750-24-Z010-blue.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\136bf5fe-7595-4704-829f-877fc2ec9973_Pilot-750-24-Z010-blue.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\1f176c11-0693-4f70-9aff-32fb1316d0ea_Picture.png))">
       <SourceType>Package</SourceType>
       <SourceId>BikeOnlineStore</SourceId>
@@ -79,6 +127,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\728fbff3-651e-4bae-9812-60f7fe5306b2_pilot-310-20-z011-blue-black2018.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\768883f7-1042-4a4c-a56b-98fb51a353d3_Trioblade TR-560.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>BikeOnlineStore</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BikeOnlineStore</BasePath>
+      <RelativePath>bikes/cover/768883f7-1042-4a4c-a56b-98fb51a353d3_Trioblade TR-560.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\768883f7-1042-4a4c-a56b-98fb51a353d3_Trioblade TR-560.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\bikes\cover\9464f4e5-50e0-4aef-8e8d-4fa86c4312cc_Cube-Acid-29.jpg))">
       <SourceType>Package</SourceType>

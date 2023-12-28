@@ -1,6 +1,7 @@
 ﻿@model ShoppingCartPlusBikeForShoppingCart
 @{
     ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_CatalogLayout.cshtml";
 }
 
 <h2 style="margin-top:30px; margin-bottom:30px" align="center">Корзина</h2>
@@ -10,7 +11,7 @@
     if (!isEmpty)
     {
         <div style="margin:auto">
-            <table style="width:40%; margin:auto"><!--class="table table-bordered table-striped"-->
+            <table style="width:40%; margin:auto">
                 @foreach (var bike in Model.bikeForShoppingCart)
                 {
                     <tr>
@@ -31,7 +32,7 @@
                             <div style="text-align:center">
                                 <a asp-controller="ShoppingCart" asp-action="DeleteWhileInShoppingCart" asp-route-Id="@bike.Id"><i style="font-size:30px" class="bi bi-dash-circle"></i></a>
                                 <br />
-                                <a asp-controller="ShoppingCart" asp-action="AddWhileInShoppingCart" asp-route-Id="@bike.Id"><i style="font-size:30px" class="bi bi-plus-circle"></i></a>
+                                <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-Id="@bike.Id"><i style="font-size:30px" class="bi bi-plus-circle"></i></a>
                             </div>
                         </td>
                     </tr>

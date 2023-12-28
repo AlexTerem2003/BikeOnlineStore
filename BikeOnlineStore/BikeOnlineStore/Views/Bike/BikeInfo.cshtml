@@ -1,7 +1,7 @@
 ﻿@model Bike
 @{
     ViewData["Title"] = "Index";
-    Layout = "_SearchLayout";
+    Layout = "~/Views/Shared/_CatalogLayout.cshtml";
 }
 
 
@@ -26,23 +26,28 @@
             </table>
         </td>
         <td style="padding-left:20px; border-left:0px">
-            <h5><button style="border: 1px solid gray; border-radius:10px;
+            <br><br>
+            <h5>
+                <a style="border: 1px solid gray; border-radius:10px; text-decoration:none;
                                background-color:#325d88; color:white;
-                               margin-top:40px; padding-left:20px; padding-right:20px; padding-top:8px; padding-bottom:8px">
-                    <i style="margin-right:5px; font-size:20px; vertical-align:middle" class="bi bi-cart3"></i> добавить в корзину
-                </button>
+                               margin-top:40px; padding-left:20px; padding-right:20px; padding-top:8px; padding-bottom:8px"
+                                asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-Id="@Model.Id">
+                                <i style="margin-right:5px; font-size:20px; vertical-align:middle" class="bi bi-cart3"></i> добавить в корзину
+                </a>
             </h5>
         </td>
         @if (User.Identity.IsAuthenticated)
         {
             if (User.IsInRole("3"))
             {
-                <a asp-controller="Bike" asp-action="Edit" asp-route-Id="@Model.Id" style="margin-left:10px; margin-right:10px" class="btn btn-primary">
-                    <i style="font-size:15px; vertical-align:middle" class="bi bi-card-list"></i>
-                </a>
-                <a asp-controller="Bike" asp-action="Delete" asp-route-Id="@Model.Id" class="btn btn-primary">
-                    <i style="font-size:15px; vertical-align:middle" class="bi bi-trash"></i>
-                </a>
+                <td style="padding-top:40px">
+                    <a asp-controller="Bike" asp-action="Edit" asp-route-Id="@Model.Id" style="margin-left:10px; margin-right:10px" class="btn btn-primary">
+                        <i style="font-size:15px; vertical-align:middle" class="bi bi-card-list"></i>
+                    </a>
+                    <a asp-controller="Bike" asp-action="Delete" asp-route-Id="@Model.Id" class="btn btn-primary">
+                        <i style="font-size:15px; vertical-align:middle" class="bi bi-trash"></i>
+                    </a>
+                </td>
             }
         }
     </tr>
